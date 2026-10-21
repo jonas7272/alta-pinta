@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Alta Pinta, hamburguesas y sándwiches en Quines, San Luis. Conocé nuestro menú y contactanos."
+    />
+
+    <title>Alta Pinta | Hamburguesería</title>
+
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+      <a href="#inicio" class="marca">
+        <img
+          src="img/logo-alta-pinta.png"
+          alt="Logo de Alta Pinta"
+          class="logo"
+        />
+        <span>ALTA PINTA</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="navegacion" id="navegacion">
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Nuestro menú</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- PORTADA -->
+      <section class="portada" id="inicio">
+        <div class="portada-contenido">
+          <p class="etiqueta">HAMBURGUESERÍA · QUINES</p>
+
+          <h1>
+            EL SABOR QUE<br />
+            SE HACE NOTAR.
+          </h1>
+
+          <p class="portada-texto">
+            Hamburguesas irresistibles, sándwiches y mucho sabor para disfrutar.
+          </p>
+
+          <a href="#menu" class="boton boton-principal"> DESCUBRÍ EL MENÚ </a>
+        </div>
+
+        <div class="portada-imagen">
+          <img
+            src="img/hamburguesa-portada.jpg"
+            alt="Hamburguesa de Alta Pinta"
+          />
+        </div>
+      </section>
+
+      <!-- PRESENTACIÓN -->
+      <section class="presentacion" id="nosotros">
+        <p class="etiqueta">BIENVENIDOS A ALTA PINTA</p>
+
+        <h2>COMIDA CON <span>ACTITUD</span></h2>
+
+        <p>
+          Somos un emprendimiento gastronómico de Quines, San Luis. Descubrí
+          nuestras hamburguesas, combos y opciones para acompañar.
+        </p>
+      </section>
+
+      <!-- MENÚ -->
+      <section class="seccion-menu" id="menu">
+        <div class="titulo-seccion">
+          <p class="etiqueta">ELEGÍ TU FAVORITO</p>
+          <h2>NUESTRO <span>MENÚ</span></h2>
+          <p>Encontrá algo rico para disfrutar.</p>
+        </div>
+
+      <div class="aviso-papas">
+        🍟 ¡Todas nuestras hamburguesas vienen con papas fritas!
+      </div>
+
+        <!-- BUSCADOR -->
+        <div class="controles-menu">
+          <input
+            type="search"
+            id="buscador"
+            placeholder="Buscar una comida..."
+            aria-label="Buscar comidas"
+          />
+
+          <div class="filtros">
+            <button class="filtro activo" data-categoria="todos">Todos</button>
+
+            <button class="filtro" data-categoria="hamburguesas">
+              Hamburguesas
+            </button>
+
+            <button class="filtro" data-categoria="bebidas">Bebidas</button>
+          </div>
+        </div>
+
+        <!-- JAVASCRIPT CARGARÁ LAS COMIDAS AQUÍ -->
+        <div class="productos-grid" id="productosGrid">
+          <p class="mensaje-carga">
+            Próximamente vas a encontrar acá nuestro menú.
+          </p>
+        </div>
+
+        <p class="sin-resultados" id="sinResultados" hidden>
+          No encontramos comidas con esa búsqueda.
+        </p>
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="contacto" id="contacto">
+        <div>
+          <p class="etiqueta">ESTAMOS EN QUINES</p>
+          <h2>¿TENÉS <span>HAMBRE?</span></h2>
+          <p>Contactanos para consultar por nuestros productos.</p>
+        </div>
+
+        <a
+          class="boton boton-principal"
+          href="https://wa.me/5492664973162"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CONSULTAR POR WHATSAPP
+        </a>
+
+        <p class="nota-contacto">
+          Consultá por WhatsApp la disponibilidad y los precios.
+        </p>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+      <a href="#inicio" class="pie-marca">ALTA PINTA</a>
+
+      <p>Hamburguesería · Quines, San Luis</p>
+
+      <p class="copyright">
+        © <span id="anio"></span> Alta Pinta. Todos los derechos reservados.
+      </p>
+
+      <a href="#inicio" class="volver-arriba"> VOLVER ARRIBA ↑ </a>
+    </footer>
+
+    <!-- Carrito flotante -->
+    <button
+      id="abrirCarrito"
+      class="carrito-flotante"
+      type="button"
+      aria-label="Abrir carrito"
+    >
+      🛒
+      <span class="carrito-texto">Mi pedido</span>
+      <span id="cantidadCarrito" class="carrito-contador">0</span>
+    </button>
+
+    <!-- Ventana del carrito -->
+    <div id="modalCarrito" class="modal-carrito" aria-hidden="true">
+      <div
+        class="carrito-contenido"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tituloCarrito"
+      >
+        <button
+          id="cerrarCarrito"
+          class="cerrar-carrito"
+          type="button"
+          aria-label="Cerrar carrito"
+        >
+          ✕
+        </button>
+
+        <h2 id="tituloCarrito">🛒 Mi pedido</h2>
+        <p>Revisá los productos que elegiste.</p>
+
+        <div id="productosCarrito">
+          <p class="carrito-vacio">Todavía no agregaste productos.</p>
+        </div>
+
+        <div class="carrito-total">
+          <span>Total estimado:</span>
+          <strong id="totalCarrito">$0</strong>
+        </div>
+
+        <!-- Datos del cliente -->
+        <div class="datos-pedido">
+          <h3>Datos del pedido</h3>
+
+          <label for="nombreCliente">Tu nombre</label>
+          <input
+            type="text"
+            id="nombreCliente"
+            placeholder="Escribí tu nombre"
+            maxlength="60"
+            autocomplete="name"
+          />
+
+          <label for="tipoEntrega">¿Cómo querés recibirlo?</label>
+          <select id="tipoEntrega">
+            <option value="Retiro por el local">Retiro por el local</option>
+            <option value="Consultar por envío">Consultar por envío</option>
+          </select>
+
+          <label for="observacionesPedido">Aclaraciones (opcional)</label>
+          <textarea
+            id="observacionesPedido"
+            placeholder="Ej.: sin algún ingrediente, consultar envío..."
+            rows="3"
+            maxlength="300"
+          ></textarea>
+        </div>
+
+        <button id="vaciarCarrito" class="boton-vaciar" type="button">
+          Vaciar carrito
+        </button>
+        <button id="finalizarPedido" class="boton-whatsapp" type="button">
+          Finalizar pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
