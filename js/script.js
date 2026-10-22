@@ -115,7 +115,7 @@ const productos = [
     categoria: "bebidas",
     descripcion: "Lata individual de Schneider de 710ml.",
     precio: 3400,
-    imagen: "img/Lata-schneider.png",
+    imagen: "img/lata-schneider.png",
   },
    {
     id: 11,
