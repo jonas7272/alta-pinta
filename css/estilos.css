@@ -1204,3 +1204,92 @@ button {
     font-weight: 800;
     line-height: 1.5;
 }
+
+.opciones-tamano {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.opcion-tamano {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--amarillo);
+  border-radius: 10px;
+  background: #202020;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.opcion-tamano strong {
+  color: var(--amarillo);
+}
+
+.opcion-tamano:hover {
+  background: var(--amarillo);
+  color: #111;
+}
+
+.opcion-tamano:hover strong {
+  color: #111;
+}
+
+/* Acomodar los botones de las tarjetas */
+.producto-acciones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.producto-acciones button {
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--amarillo);
+    border-radius: 8px;
+    background: var(--amarillo);
+    color: #111;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.producto-acciones button:hover {
+    background: #ffe36a;
+    transform: translateY(-2px);
+}
+
+/* Botón de elegir tamaño */
+.producto-acciones .boton-elegir {
+    white-space: nowrap;
+}
+
+/* Botón para agregar bebidas */
+.producto-acciones .agregar-carrito {
+    white-space: nowrap;
+}
+
+/* Evitar que el pie de la tarjeta se desordene */
+.producto-pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.producto-pie > strong {
+    color: var(--amarillo);
+}
